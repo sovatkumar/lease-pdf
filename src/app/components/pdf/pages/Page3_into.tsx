@@ -19,8 +19,10 @@ const styles = StyleSheet.create({
   },
   bulletList: {
     marginLeft: 15,
+    marginBottom:20,
     marginTop: 5,
     fontSize: 9,
+    lineHeight:1.3
   },
   bulletItem: {
     flexDirection: "row",

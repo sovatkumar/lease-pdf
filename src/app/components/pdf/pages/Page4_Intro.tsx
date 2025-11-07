@@ -49,7 +49,7 @@ export default function Page4_Intro({ tenants, furnishings }: any) {
         ))}
       </View>
 
-      <Text style={[styles.text, { lineHeight: 1.3 }]}>
+      <Text style={[styles.text, { lineHeight: 1.3,marginTop:6 }]}>
         It is understood that it is the Tenant’s own responsibility to acquire
         the tools, equipment, or any related material for fulfilling the
         Tenant’s own obligations. Any bill, or ordinance violation fee (e.g.
@@ -67,7 +67,7 @@ export default function Page4_Intro({ tenants, furnishings }: any) {
         </Text>
       </Text>
 
-      <Text style={styles.bold}>
+      <Text style={[styles.bold,{marginTop:10}]}>
         17.){" "}
         <Text style={styles.sectionTitle}>
           Furnishings Provided by Landlord Include
@@ -104,7 +104,7 @@ export default function Page4_Intro({ tenants, furnishings }: any) {
         Premises are taken by eminent domain and the lease has ended.
       </Text>
 
-      <Text style={styles.bold}>
+      <Text style={[styles.bold,{marginTop:10}]}>
         19.){" "}
         <Text style={styles.sectionTitle}>
           When Tenant Breaks Any Agreements in the Lease
@@ -150,7 +150,7 @@ export default function Page4_Intro({ tenants, furnishings }: any) {
       >
         Tenant Breaks This Lease If Tenant:
       </Text>
-      <View style={[styles.bullets, { marginLeft: 45, lineHeight: 0.5 }]}>
+      <View style={[styles.bullets, { marginLeft: 45, lineHeight: 0.5,marginTop:6,marginBottom:6 }]}>
         <View style={{ flexDirection: "row", gap: 8 }}>
           <Text>• </Text>
           <Text style={styles.text}>
@@ -222,7 +222,7 @@ export default function Page4_Intro({ tenants, furnishings }: any) {
 }
 
 const styles = StyleSheet.create({
-  page: { padding: 25, fontSize: 10, lineHeight: 1.4, fontFamily: "Arial" },
+  page: { padding: 25,paddingTop:15, fontSize: 10, lineHeight: 1.4, fontFamily: "Arial" },
   sectionTitle: {
     fontSize: 11,
     marginTop: 8,
@@ -240,7 +240,6 @@ const styles = StyleSheet.create({
   justify: { textAlign: "justify" },
   bullets: { marginLeft: 12, marginBottom: 5 },
   table: {
-    marginVertical: 8,
     width: "60%",
     alignSelf: "center",
   },

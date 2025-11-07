@@ -130,7 +130,7 @@ export default function LeaseForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col gap-4 max-w-3xl my-8 mx-auto p-6 border rounded-lg bg-white shadow-sm"
+      className="flex flex-col gap-4 max-w-3xl my-8 mx-auto p-6 border rounded-lg bg-white dark:bg-transparent  dark:text-white shadow-sm"
     >
       <h2 className="text-xl font-semibold mb-2 text-center">
         Lease Agreement Form
@@ -141,7 +141,7 @@ export default function LeaseForm() {
           <input
             {...register("landlordName")}
             placeholder="Landlord Name"
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full dark:placeholder-white"
           />
           {errors.landlordName && (
             <p className="text-red-500 text-sm">
@@ -154,7 +154,7 @@ export default function LeaseForm() {
           <input
             {...register("AddressLine")}
             placeholder="Address Line"
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full dark:placeholder-white"
           />
           {errors.AddressLine && (
             <p className="text-red-500 text-sm">{errors.AddressLine.message}</p>
@@ -165,7 +165,7 @@ export default function LeaseForm() {
           <input
             {...register("city")}
             placeholder="City"
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full dark:placeholder-white"
           />
           {errors.city && (
             <p className="text-red-500 text-sm">{errors.city.message}</p>
@@ -176,7 +176,7 @@ export default function LeaseForm() {
           <input
             {...register("state")}
             placeholder="State"
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full dark:placeholder-white"
           />
           {errors.state && (
             <p className="text-red-500 text-sm">{errors.state.message}</p>
@@ -187,7 +187,7 @@ export default function LeaseForm() {
           <input
             {...register("zip")}
             placeholder="Zip Code"
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full dark:placeholder-white"
           />
           {errors.zip && (
             <p className="text-red-500 text-sm">{errors.zip.message}</p>
@@ -205,7 +205,7 @@ export default function LeaseForm() {
                 onChange={(phone) => onChange(phone)}
                 placeholder="Enter phone number with country code"
                 className="border rounded-md"
-                inputClassName="!border-none !h-[39px]"
+                inputClassName="!border-none !h-[39px] w-full"
               />
               {error && <p className="text-red-500 text-sm">{error.message}</p>}
             </div>
@@ -216,7 +216,7 @@ export default function LeaseForm() {
           <textarea
             {...register("tenants")}
             placeholder="Tenants (comma separated, max 10)"
-            className="border p-2 rounded w-full h-20"
+            className="border p-2 rounded w-full h-20 dark:placeholder-white"
           />
           {errors.tenants && (
             <p className="text-red-500 text-sm">{errors.tenants.message}</p>
@@ -227,7 +227,7 @@ export default function LeaseForm() {
           <input
             {...register("rent")}
             placeholder="Monthly Rent (e.g. $25000)"
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full dark:placeholder-white"
           />
           {errors.rent && (
             <p className="text-red-500 text-sm">{errors.rent.message}</p>
@@ -238,7 +238,7 @@ export default function LeaseForm() {
           <input
             {...register("securityDeposit")}
             placeholder="Security Deposit (e.g. $25000)"
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full dark:placeholder-white"
           />
           {errors.securityDeposit && (
             <p className="text-red-500 text-sm">
@@ -359,7 +359,7 @@ export default function LeaseForm() {
             <input
               {...register(`furnishings.${index}.item` as const)}
               placeholder="Item name (e.g. Sofa)"
-              className="border p-2 rounded w-full"
+              className="border p-2 rounded w-full dark:placeholder-white"
               required
             />
             <input
@@ -390,7 +390,7 @@ export default function LeaseForm() {
         <button
           type="button"
           onClick={() => append({ item: "", quantity: 1 })}
-          className="bg-gray-100 px-3 py-1 rounded hover:bg-gray-200 text-sm"
+          className="bg-gray-100 px-3 py-1 rounded dark:bg-gray-500 text-sm"
         >
           + Add Furnishing Item
         </button>

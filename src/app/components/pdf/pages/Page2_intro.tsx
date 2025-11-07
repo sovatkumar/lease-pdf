@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   bold: { fontFamily: "ArialBold" },
   underline: { textDecoration: "underline" },
   indent: { marginLeft: 15 },
-  doubleIndent: { marginLeft: 30 },
+  doubleIndent: { marginLeft: 30,marginTop:10,marginBottom:10 },
   listingClass: {
     flexDirection: "row",
     gap: 8,
@@ -91,7 +91,7 @@ export default function Page2_LeaseDetails({ tenants, securityDeposit }: any) {
           </Text>
         </Text>
       </View>
-      <View style={[styles.section]}>
+      <View style={[styles.section,{marginTop:10}]}>
         <Text style={styles.sectionTitle}>
           7.){" "}
           <Text

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     padding: 4,
     marginBottom: 12,
   },
-  noticeText: { fontSize: 8, lineHeight: 1.4, textAlign: "center" },
+  noticeText: { fontSize: 8.5, lineHeight: 1.4, textAlign: "center" },
   section: { marginBottom: 12 },
   sectionTitleWithUnderline: {
     fontFamily: "ArialBold",
@@ -78,7 +78,7 @@ export default function Page1_Intro({
     new Date(date).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
-      day: "numeric",
+      day: "2-digit",
       timeZone: "Asia/Kolkata",
     });
   const start = new Date(startDate);
@@ -176,8 +176,8 @@ export default function Page1_Intro({
             Starting and Ending Dates of Lease Agreement (“Lease Term”)
           </Text>
         </Text>
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Text style={{ marginLeft: 25 }}>This Lease Term commences on</Text>
+        <View style={{ flexDirection: "row", justifyContent: "flex-start",gap:35 }}>
+          <Text style={{ marginLeft: 25,width:230 }}>This Lease Term commences on</Text>
           <Text
             style={[
               styles.bold,
@@ -190,8 +190,8 @@ export default function Page1_Intro({
             {formatDate(startDate)}
           </Text>
         </View>
-        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-          <Text style={{ marginLeft: 25 }}>This Lease Term ends on</Text>
+        <View style={{ flexDirection: "row", justifyContent: "flex-start",gap:35 }}>
+          <Text style={{ marginLeft: 25,width:230 }}>This Lease Term ends on</Text>
           <Text
             style={[
               styles.bold,
@@ -214,7 +214,7 @@ export default function Page1_Intro({
             Rent{" "}
           </Text>{" "}
         </Text>
-        <Text style={{ marginLeft: 25 }}>
+        <Text style={{ marginLeft: 25,marginTop:7 }}>
           The total amount of Rent is:
           <Text style={styles.bold}>${Number(rent).toLocaleString()}</Text> for
           the Lease Term (“Rent”).
@@ -269,16 +269,33 @@ export default function Page1_Intro({
       <View style={styles.rentTable}>
         <View style={styles.rentRow}>
           <Text>First partial month's Rent:</Text>
-          <Text>
-            {formatDate(start)} to {formatDate(endOfStartMonth)}
-          </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              gap: 35,
+            }}
+          >
+            <Text>{formatDate(start)}</Text>
+            <Text>to</Text>
+            <Text>{formatDate(endOfStartMonth)}</Text>
+          </View>
           <Text>${firstPartialRent}</Text>
         </View>
         <View style={styles.rentRow}>
           <Text>Last partial month's Rent:</Text>
-          <Text>
-            {formatDate(startOfEndMonth)} to {formatDate(end)}
-          </Text>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "space-between",
+              gap: 35,
+            }}
+          >
+            <Text>{formatDate(startOfEndMonth)}</Text>
+            <Text>to</Text>
+            <Text>{formatDate(end)}</Text>
+          </View>
+
           <Text>${lastPartialRent}</Text>
         </View>
       </View>
@@ -290,7 +307,11 @@ export default function Page1_Intro({
         <Text style={[styles.sectionTitleWithUnderline]}>
           {formatDate(start)}
         </Text>
-        <Text style={[styles.bold]}>${parseFloat(firstPartialRent.replace(/,/g, '')) + parseFloat(lastPartialRent.replace(/,/g, ''))}</Text>
+        <Text style={[styles.bold]}>
+          $
+          {parseFloat(firstPartialRent.replace(/,/g, "")) +
+            parseFloat(lastPartialRent.replace(/,/g, ""))}
+        </Text>
       </View>
 
       <SignatureBox signature={tenantsArray} />
