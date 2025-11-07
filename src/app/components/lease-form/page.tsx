@@ -252,7 +252,7 @@ export default function LeaseForm() {
           <input
             type="datetime-local"
             {...register("startDate")}
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full scheme-dark"
           />
           {errors.startDate && (
             <p className="text-red-500 text-sm">{errors.startDate.message}</p>
@@ -264,7 +264,7 @@ export default function LeaseForm() {
           <input
             type="datetime-local"
             {...register("endDate")}
-            className="border p-2 rounded w-full"
+            className="border p-2 rounded w-full scheme-dark"
           />
           {errors.endDate && (
             <p className="text-red-500 text-sm">{errors.endDate.message}</p>
